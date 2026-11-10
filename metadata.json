@@ -1,0 +1,6 @@
+{
+  "name": "JobPilot AI - Job Application Automation Agent",
+  "description": "AI-powered job discovery, smart multi-factor scoring, factual resume tailoring, cover letter generator, Excel sync, and human-in-the-loop application automation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

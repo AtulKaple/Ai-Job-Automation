@@ -1,0 +1,158 @@
+%-------------------------
+% Resume in LaTeX
+% Author : Atul Kaple
+% One page, ATS-friendly, project names removed
+%------------------------
+
+\documentclass[letterpaper,9pt]{extarticle}
+\usepackage{lmodern}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage[margin=0.5in, top=0.45in, bottom=0.45in]{geometry}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+\pagestyle{empty}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Keep PDF text machine readable for ATS parsers
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+% Section headings
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-2pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{2pt}\item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProjectLabel}[1]{\vspace{4pt}\noindent{\small\textbf{#1}}\\[-3pt]}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=0pt, leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}    {\Huge \scshape Atul Kaple} \\ \vspace{4pt}    \small    +91 8669663539 \ $|$ \    \href{mailto:kapleatul07@gmail.com}{\underline{kapleatul07@gmail.com}} \ $|$ \    \href{https://atulkaple.vercel.app/}{\underline{Portfolio}} \ $|$ \    \href{https://www.linkedin.com/in/atul-kaple-b91976227/}{\underline{LinkedIn}} \ $|$ \    \href{https://github.com/AtulKaple}{\underline{GitHub}} \ $|$ \    Pune, Maharashtra, India\end{center}
+
+%-----------SUMMARY-----------
+\section{Professional Summary}
+\small{Senior Full Stack Engineer with 2 years of production experience building high-performance, real-time collaborative applications using TypeScript, React 18+, Node.js, and modern state architectures.}
+
+%-----------TECHNICAL SKILLS-------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt, itemsep=0pt]
+    \small{\item{
+      \textbf{Languages \& Core}{: TypeScript, JavaScript, Node.js, Express.js} \vspace{1pt} \\
+      \textbf{Frontend \& Real-Time}{: React, Next.js, Zustand, WebSockets, Tailwind CSS, Material-UI} \\
+      \textbf{Architecture \& Data}{: CRDT, MongoDB, Mongoose, Redis, AWS, Docker, Git \& GitHub} \\
+    }}
+ \end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {SidLabs LLP}{Nov 2024 -- Present}
+      {Full Stack Developer}{Delhi, India (Remote)}
+
+    \resumeProjectLabel{Patient Community Network (React, TypeScript, Node.js, Socket.io, Redis)}
+    \resumeItemListStart
+      \resumeItem{Developed a privacy-focused social network with polls, media uploads, mood tags, anonymous posting and a ranked feed; Redis caching and cursor pagination support 2,000 concurrent users.}
+      \resumeItem{Indexed posts and comments for semantic search with Transformers.js and MongoDB Atlas Vector Search (RAG), returning summaries that link back to the original posts.}
+      \resumeItem{Gave authors audience controls and applied HIPAA Safe Harbor rules to strip identifying details before posts reach clinical researchers.}
+    \resumeItemListEnd
+
+    \resumeProjectLabel{Multi-Tenant Enterprise Platform (Next.js 15, TanStack Query, Socket.io, Razorpay, ExcelJS)}
+    \resumeItemListStart
+      \resumeItem{Assembled a multi-tenant management portal with Next.js 15, React 19, TypeScript and Node.js/Express, isolating dual-database connections to serve corporate clients with zero cross-tenant contamination.}
+      \resumeItem{Slashed network payload sizes by 72\% and achieved sub-10ms cached view paints by deploying offline-first TanStack React Query persistence with client-scoped localStorage caching and HTTP gzip compression.}
+      \resumeItem{Cut redundant database roundtrips by 90\% through background sync-status hashing, and dropped dashboard latency from 1,400ms to < 45ms (96\% reduction) using in-memory TTL caching and compound indexes.}
+    \resumeItemListEnd
+
+    \resumeProjectLabel{Legal Case Automation (Next.js, Node.js, Google Gemini)}
+    \resumeItemListStart
+      \resumeItem{Built a case evaluation flow on Google Gemini that checks Swiss asylum admissibility and drafts structured UN Human Rights appeals (CAT, CEDAW) of 3,000+ words, cutting case turnaround by 50\%.}
+      \resumeItem{Wrote browser-side text extraction with Tesseract.js, pdfjs-dist and Mammoth that reads PDFs, scanned images and Word files without a server round trip, replacing manual evidence transcription.}
+      \resumeItem{Generated court-ready .docx petitions from case data with Docxtemplater and PizZip, sorting evidence into standard annexes automatically.}
+    \resumeItemListEnd
+
+    \resumeProjectLabel{Financial Projection Tool (React, Node.js, ExcelJS, MongoDB)}
+    \resumeItemListStart
+      \resumeItem{Designed a 14-step form flow that produces bank-format Credit Monitoring Arrangement (CMA) projections, loan amortization schedules and 14 annexures for Chartered Accountants.}
+      \resumeItem{Coded an 8,000+ line ExcelJS module that places live formulas across 15+ linked worksheets, with a custom fix for \#REF! errors when rows are inserted or removed.}
+      \resumeItem{Issued expiring client links (Node.js crypto tokens, MongoDB TTL index, 72-hour limit) that need no login and refill the multi-step form from saved Zustand state.}
+    \resumeItemListEnd
+
+    \resumeProjectLabel{Healthcare Research Application (React, TypeScript, Node.js, AWS)}
+    \resumeItemListStart
+      \resumeItem{Created a five-role system (patient, caregiver, clinician, researcher, admin) with an HL7 FHIR R4 assessment module, MongoDB transactions, automatic scoring and S3 video streaming.}
+      \resumeItem{Met HIPAA and GDPR requirements with tiered consent checks, separate MongoDB clusters for health and public data, AWS Cognito MFA and a SHA-256 hash-chained audit log.}
+      \resumeItem{Wrote a de-identification job (AWS KMS decryption, HMAC-SHA256 pseudonyms, small-group suppression with $k < 5$) over 34+ datasets; synced Apple HealthKit data and scheduled medication reminders.}
+    \resumeItemListEnd
+
+   
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Personal Project}
+    \resumeSubHeadingListStart
+        \vspace{-4pt}
+      \resumeProjectHeading
+          {\textbf{Collaborative Whiteboard Application} (Next.js, TypeScript, Liveblocks) $\vert$ \href{https://vision-map-psi.vercel.app/}{\underline{Live Link}}
+          $\vert$ \href{https://drive.google.com/file/d/1ns4KWCwO-QIQ7Ji2xOfByeqClSMt-WEo/view?usp=sharing}{\underline{Demo}}}{}
+          \vspace{-4pt}
+          \resumeItemListStart
+            \resumeItem{ Architected an infinite-canvas collaborative workspace supporting 16+ vector primitives, sticky notes and connector arrows using Next.js 14, React 18, TypeScript and Tailwind CSS.}
+            \resumeItem{ Implemented real-time CRDT synchronization via Liveblocks (LiveMap/LiveList) with 16ms throttling (60 FPS), powering conflict-free multi-user editing, ephemeral cursor chat, live reactions, and camera spotlight follow mode.}
+            \resumeItem{Engineered client-side optimizations and secure architecture, utilizing the Ramer-Douglas-Peucker (RDP) algorithm for stroke point reduction, and Clerk + Convex for multi-tenant RBAC with sub-100ms reactive database queries.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Army Institute of Technology}{June 2020 -- May 2024}
+      {Bachelor of Engineering, Mechanical Engineering $\vert$ GPA: 8.0}{Pune, Maharashtra}
+  \resumeSubHeadingListEnd
+
+\end{document}
